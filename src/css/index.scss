@@ -22,10 +22,10 @@ body {
 }
 
 .container {
-  height: 100vh;
+  height: auto;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 66.6% 33%;
+  grid-template-rows: minmax(700px, 66vh) minmax(350px, 33vh);
   grid-template-areas:
     "main main main main description description description "
     "about about about about about about about";
@@ -76,7 +76,7 @@ body {
 }
 
 .title__text {
-  font-size: 32px;
+  font-size: 36px;
   margin-bottom: 8px;
 }
 
@@ -113,7 +113,7 @@ body {
 
 .about {
   position: relative;
-  padding: 50px 50px;
+  padding: 50px 50px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -160,6 +160,13 @@ body {
       background-color: rgb(41, 41, 41);
     }
   }
+}
+
+.attribution p {
+  padding: 0;
+  margin-top: 26px;
+  align-self: flex-end;
+  font-size: 12px;
 }
 
 /* MEDIA QUERIES ---------------------------------------------------------------------------------*/
