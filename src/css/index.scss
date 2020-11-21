@@ -69,19 +69,19 @@ body {
 /*  MAIN SECTION -----------------------------------------------------------------------------   */
 .main-section {
   grid-area: description;
-  padding: 10% 50px 0;
+  padding: 0 10%;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   flex-direction: column;
 }
 
 .title__text {
   font-size: 32px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .description {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   color: $color-very-dark-gray;
   line-height: 1.5;
   font-size: 14px;
@@ -148,12 +148,12 @@ body {
   align-items: flex-end;
   &--left,
   &--right {
+    width: 50%;
+    height: 65px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: black;
-    width: 50%;
-    height: 50px;
     transition: all 0.25s ease-in-out;
     cursor: pointer;
     &:hover {
@@ -196,7 +196,8 @@ body {
     justify-content: flex-end;
     &--left,
     &--right {
-      width: 50px;
+      width: 80px;
+      height: 80px;
     }
   }
 
