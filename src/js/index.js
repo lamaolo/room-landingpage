@@ -17,7 +17,6 @@ const leftButton = document.getElementById("left-button");
 const rightButton = document.getElementById("right-button");
 
 let sliderIndex = 1;
-console.log("sliderIndex: " + sliderIndex);
 
 leftButton.addEventListener("click", () => {
   if (sliderIndex === 1) {
@@ -27,7 +26,6 @@ leftButton.addEventListener("click", () => {
     sliderIndex = sliderIndex - 1;
     changeSlider();
   }
-  console.log("sliderIndex: " + sliderIndex);
 });
 
 rightButton.addEventListener("click", () => {
@@ -38,7 +36,6 @@ rightButton.addEventListener("click", () => {
     sliderIndex = sliderIndex + 1;
     changeSlider();
   }
-  console.log("sliderIndex: " + sliderIndex);
 });
 
 // Pasar de slider automáticamente cada 5000ms
