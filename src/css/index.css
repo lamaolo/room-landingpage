@@ -1,0 +1,295 @@
+/* VARS --------------------------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+  height: 100vh;
+}
+
+.hamburgermenu-icon {
+  display: none;
+}
+
+.unstyled-text {
+  color: unset;
+  text-decoration: none;
+}
+
+.container {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  -ms-grid-rows: 66.6% 33%;
+      grid-template-rows: 66.6% 33%;
+      grid-template-areas: "main main main main description description description " "about about about about about about about";
+}
+
+.slider-section {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: main;
+  background-image: url("../static/desktop-image-hero-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  padding: 15px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.logo {
+  font-size: 30px;
+}
+
+.navbar {
+  margin: 5px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.navbar__item {
+  margin: 0 15px 0 0;
+}
+
+/*  MAIN SECTION -----------------------------------------------------------------------------   */
+.main-section {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 3;
+  grid-area: description;
+  padding: 10% 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.title__text {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.description {
+  margin-bottom: 12px;
+  color: #454545;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.action {
+  margin-top: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.action__text {
+  margin: 0;
+  margin-top: 4px;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 7px;
+}
+
+.action__arrow {
+  margin-left: 25px;
+  width: 55px;
+}
+
+/* ABOUT SECTION -----------------------------------------------------------------------------------------------------------*/
+.about-section {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: about;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.5fr 1fr;
+      grid-template-columns: 1fr 1.5fr 1fr;
+}
+
+.about {
+  position: relative;
+  padding: 50px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about .about-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 7px;
+}
+
+.about .about-description {
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #454545;
+}
+
+.decorate-pic img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* SLIDER BUTTONS */
+.slider__buttons {
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  grid-column-start: 5;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.slider__buttons--left, .slider__buttons--right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: black;
+  width: 50%;
+  height: 50px;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.slider__buttons--left:hover, .slider__buttons--right:hover {
+  background-color: #292929;
+}
+
+/* MEDIA QUERIES ---------------------------------------------------------------------------------*/
+@media screen and (max-width: 900px) {
+  .container {
+    width: 100vw;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: auto auto auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "main" "description" "about";
+  }
+  .slider-section,
+  .about-section {
+    width: 100vw;
+  }
+  .main-section,
+  .about {
+    padding: 50px 35px;
+  }
+  .slider__buttons {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .slider__buttons--left, .slider__buttons--right {
+    width: 50px;
+  }
+  .header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .navbar-container {
+    position: absolute;
+    right: -100vw;
+  }
+  .navbar-container.visible {
+    padding-right: 35px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 0;
+    height: 115px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    right: 0;
+    left: 0;
+    background: white;
+    color: black;
+    z-index: 10;
+  }
+  .hamburgermenu-icon {
+    display: block;
+    position: absolute;
+    left: 0;
+    padding-left: 35px;
+    font-size: 25px;
+    z-index: 100;
+  }
+  .hamburgermenu-icon.visible {
+    color: black;
+  }
+  .slider-section {
+    height: 70vh;
+  }
+  .about-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .decorate-pic img {
+    max-height: 400px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

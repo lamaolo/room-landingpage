@@ -1,0 +1,239 @@
+/* VARS --------------------------------------*/
+$color-dark-gray: hsl(0, 0%, 63%);
+$color-black: #000;
+$color-white: #fff;
+$color-very-dark-gray: hsl(0, 0%, 27%);
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+  height: 100vh;
+}
+
+.hamburgermenu-icon {
+  display: none;
+}
+
+.unstyled-text {
+  color: unset;
+  text-decoration: none;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 66.6% 33%;
+  grid-template-areas:
+    "main main main main description description description "
+    "about about about about about about about";
+}
+
+.slider-section {
+  grid-area: main;
+  background-image: url("../static/desktop-image-hero-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  padding: 15px 50px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.logo {
+  font-size: 30px;
+}
+
+.navbar {
+  margin: 5px 0 0 0;
+  display: flex;
+  list-style: none;
+  align-content: center;
+}
+
+.navbar__item {
+  margin: 0 15px 0 0;
+}
+
+/*  MAIN SECTION -----------------------------------------------------------------------------   */
+.main-section {
+  grid-area: description;
+  padding: 10% 50px 0;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.title__text {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.description {
+  margin-bottom: 12px;
+  color: $color-very-dark-gray;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.action {
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+  &__text {
+    margin: 0;
+    margin-top: 4px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 7px;
+  }
+  &__arrow {
+    margin-left: 25px;
+    width: 55px;
+  }
+}
+
+/* ABOUT SECTION -----------------------------------------------------------------------------------------------------------*/
+.about-section {
+  grid-area: about;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+}
+
+.about {
+  position: relative;
+  padding: 50px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  & .about-title {
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 7px;
+  }
+  & .about-description {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: $color-very-dark-gray;
+  }
+}
+
+.decorate-pic img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* SLIDER BUTTONS */
+
+.slider__buttons {
+  grid-column-start: 4;
+  grid-column-start: 5;
+  grid-row: 1;
+  display: flex;
+  align-items: flex-end;
+  &--left,
+  &--right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    width: 50%;
+    height: 50px;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(41, 41, 41);
+    }
+  }
+}
+
+/* MEDIA QUERIES ---------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 900px) {
+  .container {
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "main"
+      "description"
+      "about";
+  }
+
+  .slider-section,
+  .about-section {
+    width: 100vw;
+  }
+
+  .main-section,
+  .about {
+    padding: 50px 35px;
+  }
+
+  .slider__buttons {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    justify-content: flex-end;
+    &--left,
+    &--right {
+      width: 50px;
+    }
+  }
+
+  .header {
+    justify-content: center;
+  }
+
+  .navbar-container {
+    position: absolute;
+    right: -100vw;
+  }
+
+  .navbar-container.visible {
+    padding-right: 35px;
+    display: flex;
+    top: 0;
+    height: 115px;
+    justify-content: flex-end;
+    align-items: center;
+    right: 0;
+    left: 0;
+    background: white;
+    color: black;
+    z-index: 10;
+  }
+
+  .hamburgermenu-icon {
+    display: block;
+    position: absolute;
+    left: 0;
+    padding-left: 35px;
+    font-size: 25px;
+    z-index: 100;
+    &.visible {
+      color: black;
+    }
+  }
+
+  .slider-section {
+    height: 70vh;
+  }
+
+  .about-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .decorate-pic img {
+    max-height: 400px;
+  }
+}
