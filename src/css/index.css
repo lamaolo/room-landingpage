@@ -8,7 +8,7 @@ body {
   height: 100vh;
 }
 
-.hamburgermenu-icon {
+.hamburgermenu {
   display: none;
 }
 
@@ -36,6 +36,8 @@ body {
   background-image: url("../static/desktop-image-hero-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-transition: background-image 0.5s ease-out;
+  transition: background-image 0.5s ease-out;
 }
 
 .header {
@@ -54,7 +56,7 @@ body {
 }
 
 .navbar {
-  margin: 5px 0 0 0;
+  margin: 7px 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,7 +66,14 @@ body {
 }
 
 .navbar__item {
-  margin: 0 15px 0 0;
+  margin: 0 35px 0 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar__item:hover {
+  border-bottom: 2px solid white;
 }
 
 /*  MAIN SECTION -----------------------------------------------------------------------------   */
@@ -217,6 +226,10 @@ body {
         grid-template-rows: auto auto auto;
         grid-template-areas: "main" "description" "about";
   }
+  .slider-section {
+    background-position: center;
+    background-size: fill;
+  }
   .slider-section,
   .about-section {
     width: 100vw;
@@ -243,37 +256,47 @@ body {
             justify-content: center;
   }
   .navbar-container {
-    position: absolute;
-    right: -100vw;
-  }
-  .navbar-container.visible {
+    height: 110px;
     padding-right: 35px;
+    position: absolute;
+    top: -100vh;
+    right: 0;
+    left: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    top: 0;
-    height: 115px;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    right: 0;
-    left: 0;
     background: white;
+    -webkit-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
     color: black;
+  }
+  .navbar-container.visible {
+    top: 0;
     z-index: 10;
   }
-  .hamburgermenu-icon {
-    display: block;
+  .navbar__item {
+    margin: 0px 5px;
+  }
+  .hamburgermenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: absolute;
     left: 0;
     padding-left: 35px;
     font-size: 25px;
     z-index: 100;
   }
-  .hamburgermenu-icon.visible {
+  .hamburgermenu--icon {
+    color: white;
+  }
+  .hamburgermenu--icon.visible {
     color: black;
   }
   .slider-section {
@@ -289,7 +312,7 @@ body {
             flex-direction: column;
   }
   .decorate-pic img {
-    max-height: 400px;
+    max-height: 350px;
   }
 }
 /*# sourceMappingURL=index.css.map */

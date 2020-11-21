@@ -12,7 +12,7 @@ body {
   height: 100vh;
 }
 
-.hamburgermenu-icon {
+.hamburgermenu {
   display: none;
 }
 
@@ -36,6 +36,7 @@ body {
   background-image: url("../static/desktop-image-hero-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  transition: background-image 0.5s ease-out;
 }
 
 .header {
@@ -50,14 +51,19 @@ body {
 }
 
 .navbar {
-  margin: 5px 0 0 0;
+  margin: 7px 0 0 0;
   display: flex;
   list-style: none;
   align-content: center;
 }
 
 .navbar__item {
-  margin: 0 15px 0 0;
+  margin: 0 35px 0 0;
+  box-sizing: border-box;
+  border-bottom: 2px solid transparent;
+  &:hover {
+    border-bottom: 2px solid white;
+  }
 }
 
 /*  MAIN SECTION -----------------------------------------------------------------------------   */
@@ -169,6 +175,11 @@ body {
       "about";
   }
 
+  .slider-section {
+    background-position: center;
+    background-size: fill;
+  }
+
   .slider-section,
   .about-section {
     width: 100vw;
@@ -194,32 +205,40 @@ body {
   }
 
   .navbar-container {
+    height: 110px;
+    padding-right: 35px;
     position: absolute;
-    right: -100vw;
+    top: -100vh;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: white;
+    transition: all 0.35s ease-in-out;
+    color: black;
   }
 
   .navbar-container.visible {
-    padding-right: 35px;
-    display: flex;
     top: 0;
-    height: 115px;
-    justify-content: flex-end;
-    align-items: center;
-    right: 0;
-    left: 0;
-    background: white;
-    color: black;
     z-index: 10;
   }
 
-  .hamburgermenu-icon {
-    display: block;
+  .navbar__item {
+    margin: 0px 5px;
+  }
+
+  .hamburgermenu {
+    display: flex;
     position: absolute;
     left: 0;
     padding-left: 35px;
     font-size: 25px;
     z-index: 100;
-    &.visible {
+    &--icon {
+      color: white;
+    }
+    &--icon.visible {
       color: black;
     }
   }
@@ -234,6 +253,6 @@ body {
   }
 
   .decorate-pic img {
-    max-height: 400px;
+    max-height: 350px;
   }
 }
