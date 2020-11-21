@@ -144,7 +144,7 @@ body {
 
 .about {
   position: relative;
-  padding: 50px 50px 0;
+  padding: 50px 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
